@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let car of cars" class="col-lg-4 col-md-6 col-xs-12">
+
+            <div class="card mx-auto" style="width: 25rem;">
+                <img src="{{car.img}}" class="card-img-top" alt="...">
+                <div class="card-body p-0">
+                    <h5 class="card-title text-center bg-dark text-light fs-3 p-1">Marke: {{car.marke}}</h5>
+                    <p class="card-text ps-2">Model: {{car.model}}</p>
+                    <p class="card-text ps-2">Year: {{car.year}}</p>
+                    <p><span (click)="likes(car)" class="btn" [style.background-color]="car.likes > 4 ? 'green' : 'red'">Likes {{car.likes}}</span></p>
+                </div>
+            </div>
+
+        </div>
+        <form class="my-5" [formGroup]="info" (ngSubmit)="onSubmit()">
+            <label>
+      Model:
+       <input type="text" formControlName="model">
+     </label>
+            <label>
+       Marke:
+      <input type="text" formControlName="marke">
+     </label>
+            <label>
+      Year:
+       <input type="number" formControlName="year">
+      </label>
+            <label>
+        Img:
+       <input type="text" formControlName="img">
+      </label>
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    </div>
+</div>
+<span class="btn btn-primary" (click)="sort()">Sort</span>

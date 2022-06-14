@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">{{title}}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact">Contact us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary" (click)="clickCounter()" href="#">Donate{{ counter }}€</a>
+                </li>
+                <li>
+                    <ng-template [ngIf]="counter > 200">
+                        <p><b class="text-success btn">You are VIP</b></p>
+                    </ng-template>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
