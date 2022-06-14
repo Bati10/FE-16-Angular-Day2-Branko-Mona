@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row justify-content-center d-flex">
+        <div *ngFor="let item of cars" class="col-4">
+            <div class="card m-2" style="width: 18rem">
+                <img src="{{ item.image }}" alt="" class="card-img-top" style="height: 10rem; object-fit: cover" alt="... " />
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.brand }}</h5>
+                    <p class="card-text">
+                        {{ item.seats }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12"></div>
+    </div>
+</div>
+<form [formGroup]="Info" (ngSubmit)="onSubmit()">
+    Brand:
+    <input type="text" formControlName="brand" />
+    <input type="text" formControlName="seats" />
+    <input type="text" formControlName="image" />
+    <input type="submit" value="Submit" />
+</form>
